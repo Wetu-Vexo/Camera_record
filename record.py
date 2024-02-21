@@ -6,7 +6,7 @@ import rhreading
 q = queue.Queue()
 videopath = 0
 duration = 5*60
-savepath = "video.mp4
+savepath = "video.avi"
 width = int(cap.get(cv.CAP_PROP_FRAME_WIDTH))
 height = int(cap.get(cv.CAP_PROP_FRAME_HEIGHT))
 
@@ -30,9 +30,10 @@ def Record():
     if .empty() !=True:
       frame = q.get()
       writer.write(frame)
-      if (time.time() - start_time >= duration:
-        break
-      if cv2.waitKey(1) & 0xff == ord('q')
+      if (time.time() - start_time >= duration):
+          break
+      if cv2.waitKey(1) & 0xff == ord('q'):
+          break
 
 if __name__=='__main__':
     p1=threading.Thread(target=Receive)
